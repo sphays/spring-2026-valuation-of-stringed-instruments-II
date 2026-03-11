@@ -26,6 +26,7 @@ def norm_text(s: str) -> str:
     s = "" if s is None else str(s)
     s = s.translate(CHAR_MAP)
     s = strip_accents(s)
+    s = "".join(ch for ch in s if unicodedata.category(ch) != "Cf")
     s = s.casefold().strip()
     s = re.sub(r"[’`]", "'", s)
     s = re.sub(r"[\s\-]+", " ", s)
@@ -211,6 +212,9 @@ def build_candidates_index(
                 k = norm_text(alt)
                 if k in unmatched:
                     maybe_add(k, parts)
+                    unmatched.discard(k)
+                    if not unmatched:
+                        break
 
     return cand_by_key
 
