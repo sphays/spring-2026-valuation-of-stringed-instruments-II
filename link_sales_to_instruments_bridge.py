@@ -91,7 +91,7 @@ VARIANT_MAP = {
     "tarisio": "Tarisio",
     "phillip's": "Phillip's", "phillips": "Phillip's",
     # Pont demandé
-    "tarisio private sales": "Tarisio", "tarisio private sale": "Tarisio"
+    #"tarisio private sales": "Tarisio", "tarisio private sale": "Tarisio"
 }
 
 def canonicalize_house(name: str) -> str:
@@ -354,4 +354,5 @@ def main():
         print("Aucune vente ambiguë.")
 
 if __name__ == "__main__":
+
     main()
