@@ -6,6 +6,11 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+import math
+import re
+import unicodedata
+from dataclasses import dataclass
+from typing import Dict, List, Optional, Tuple, Union
 
 data = pd.read_csv("price_adj_w_all_features.csv")
 
@@ -60,12 +65,38 @@ train_df, val_df, test_df = stratified_train_val_test_split(
     country_col="country_iso1",
     type_col="type",
     test_size=0.20,
-    val_size=0.20,   # 20% of remaining -> if test=0.2, then val is 0.2*0.8=0.16 of total
+    val_size=0.20,  
     min_count=5,
     random_state=42,
 )
 
 ################## Next we fit maker-level location fill rules using only the training data, and then apply those rules to all splits to fill in missing location information based on maker name. ##################
+# Normalization
+CHAR_MAP = str.maketrans({
+    "ø": "o", "Ø": "O",
+    "ł": "l", "Ł": "L",
+    "đ": "d", "Đ": "D",
+    "ð": "d", "Ð": "D",
+    "þ": "th", "Þ": "Th",
+    "æ": "ae", "Æ": "Ae",
+    "œ": "oe", "Œ": "Oe",
+})
+
+def strip_accents(s: str) -> str:
+    s = unicodedata.normalize("NFKD", s)
+    return "".join(ch for ch in s if not unicodedata.combining(ch))
+
+def norm_text(s: str) -> str:
+    s = "" if s is None else str(s)
+    s = s.translate(CHAR_MAP)
+    s = strip_accents(s)
+    s = s.casefold().strip()
+    s = re.sub(r"[’`]", "'", s)
+    s = re.sub(r"[\s\-]+", " ", s)
+    s = re.sub(r"\s+", " ", s)
+    return s
+
+#Functions to fit and apply maker-level location fill rules
 def fit_maker_location_rules(
     train_df,
     maker_col="maker_name",
