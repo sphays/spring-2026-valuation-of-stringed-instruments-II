@@ -4,6 +4,7 @@
 # These are
 # 1. Economic features based on the current stock index', rates', precious metals', currencies' trends, volatilities and sentiments etc.
 # 2. Geographical features grouping the city where the instrument was made into broader categrories.
+# 3. Merging with maker-level data (e.g. maker's country, active years, etc.)
 ##########################################
 
 import pandas as pd
