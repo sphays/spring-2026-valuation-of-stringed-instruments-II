@@ -2,9 +2,9 @@
 # In this file all the additional features that are not part of the auction data but are believed
 # to carry predictive power are created.
 # These are
-# 1. Economic features based on the current stock index', rates', precious metals', currencies' trends, volatilities and sentiments etc.
-# 2. Geographical features grouping the city where the instrument was made into broader categrories.
-# 3. Merging with maker-level data (e.g. maker's country, active years, etc.)
+# 1. Date, city, country, region of the maker, where possible. 
+# 2. Economic features based on the current stock index', rates', precious metals', currencies' trends, volatilities and sentiments etc.
+
 ##########################################
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -17,11 +17,244 @@ from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple, Union
 
 ###############################
-# 1. Economic Feature Generation
+# 1. Geographical and temporal data of the maker.
+###############################
+import re
+import numpy as np
+import pandas as pd
+
+
+# ── transfo: string date → approximate numeric year ───────────────────────────
+
+CENTURY_MIDPOINTS = {
+    'early': -25, 'mid': 0, 'late': 25,   # offsets from century midpoint (50)
+}
+
+def transfo(date_str):
+    """
+    Convert a messy string date (fl., b., d., c., ranges, centuries) to an
+    approximate numeric year (float). Returns np.nan if unparseable.
+
+    Examples:
+        "1750"              → 1750
+        "1680–1732"         → 1706
+        "fl. 1868–"         → 1868
+        "fl. 1868–1903"     → 1886
+        "c. 1901"           → 1901
+        "b. 1971"           → 1971
+        "d. 1850"           → 1850
+        "fl. 19th c."       → 1850
+        "early 19th c."     → 1810
+        "mid 18th c."       → 1750
+        "late 20th c."      → 1975
+        "fl. early 19th c." → 1810
+        "from 1922"         → 1922
+        "1835"              → 1835
+    """
+    if not date_str or pd.isna(date_str):
+        return np.nan
+
+    s = str(date_str).strip()
+
+    # ── strip fl., b., d., c. prefixes ──────────────────────────────────────
+    s_clean = re.sub(r'^(fl\.|b\.|d\.|c\.)\s*', '', s, flags=re.I).strip()
+
+    # ── "from YYYY" ──────────────────────────────────────────────────────────
+    m = re.match(r'^from\s+(\d{4})', s_clean, re.I)
+    if m:
+        return float(m.group(1))
+
+    # ── range "YYYY–YYYY" or "YYYY-YYYY" ────────────────────────────────────
+    m = re.match(r'^(\d{4})\s*[-–]\s*(\d{4})', s_clean)
+    if m:
+        return (float(m.group(1)) + float(m.group(2))) / 2
+
+    # ── open range "YYYY–" ───────────────────────────────────────────────────
+    m = re.match(r'^(\d{4})\s*[-–]\s*$', s_clean)
+    if m:
+        return float(m.group(1))
+
+    # ── single year "YYYY" ───────────────────────────────────────────────────
+    m = re.match(r'^(\d{4})$', s_clean)
+    if m:
+        return float(m.group(1))
+
+    # ── century expressions: "early/mid/late Nth c." ─────────────────────────
+    m = re.search(r'(early|mid|late)?\s*(\d+)(st|nd|rd|th)\s*c', s_clean, re.I)
+    if m:
+        qualifier = (m.group(1) or 'mid').lower()
+        century   = int(m.group(2))
+        base      = (century - 1) * 100  # e.g. 19th c. → 1800
+        offsets   = {'early': 15, 'mid': 50, 'late': 80}
+        return float(base + offsets[qualifier])
+
+    # ── multiple values separated by "/" (e.g. firm dates) ──────────────────
+    parts = re.findall(r'\d{4}', s)
+    if parts:
+        years = [float(y) for y in parts]
+        return sum(years) / len(years)
+
+    return np.nan
+
+
+# ── imputer ───────────────────────────────────────────────────────────────────
+
+def imputer(sales: pd.DataFrame,
+            makers: pd.DataFrame,
+            instruments: pd.DataFrame) -> pd.DataFrame:
+    """
+    Fill missing city_maker and make_date in sales, using three fallback
+    sources for each field.
+
+    city_maker fallback chain (per maker_id):
+      1. Most frequent city_maker across all sales of this maker
+      2. Most frequent city_maker across instruments of this maker
+      3. city column in makers df for this maker_id
+
+    make_date fallback chain (per maker_id):
+      1. Mean make_date across instruments of this maker (numeric)
+      2. transfo(date) from makers df for this maker_id
+
+    Parameters
+    ----------
+    sales       : sales DataFrame; must have columns maker_id, city_maker.
+                  make_date column is created if absent.
+    makers      : makers DataFrame; index or column maker_id, columns city, date.
+    instruments : instruments DataFrame; must have columns maker_id, city_maker.
+                  Optionally make_date.
+
+    Returns
+    -------
+    sales DataFrame with city_maker and make_date filled where possible.
+    """
+    sales = sales.copy()
+
+    # Ensure make_date column exists
+    if 'make_date' not in sales.columns:
+        sales['make_date'] = np.nan
+
+    # ── Normalise makers index ────────────────────────────────────────────────
+    if 'maker_id' in makers.columns:
+        makers_idx = makers.set_index('maker_id')
+    else:
+        makers_idx = makers.copy()
+
+    # ── Pre-compute city lookups ──────────────────────────────────────────────
+
+    def _most_frequent(series):
+        """Return most frequent non-null value, or None."""
+        s = series.dropna()
+        s = s[s.str.strip() != ''] if s.dtype == object else s
+        return s.mode().iloc[0] if len(s) > 0 else None
+
+    # 1. Most frequent city in sales per maker_id
+    city_from_sales = (
+        sales.groupby('maker_id')['city_maker']
+        .agg(_most_frequent)
+        .rename('city_sales')
+    )
+
+    # 2. Most frequent city in instruments per maker_id
+    if 'city_maker' in instruments.columns:
+        city_from_instruments = (
+            instruments.groupby('maker_id')['city_maker']
+            .agg(_most_frequent)
+            .rename('city_instruments')
+        )
+    else:
+        city_from_instruments = pd.Series(dtype=str, name='city_instruments')
+
+    # 3. City from makers df
+    city_from_makers = (
+        makers_idx['city'].dropna() if 'city' in makers_idx.columns
+        else pd.Series(dtype=str)
+    )
+
+    # ── Pre-compute make_date lookups ─────────────────────────────────────────
+
+    # 1. Mean make_date from instruments per maker_id
+    if 'make_date' in instruments.columns:
+        make_date_from_instruments = (
+            instruments.groupby('maker_id')['make_date']
+            .apply(lambda s: pd.to_numeric(s, errors='coerce').mean())
+            .rename('make_date_instruments')
+        )
+    else:
+        make_date_from_instruments = pd.Series(dtype=float, name='make_date_instruments')
+
+    # 2. transfo(date) from makers df
+    if 'date' in makers_idx.columns:
+        make_date_from_makers = makers_idx['date'].apply(transfo).rename('make_date_makers')
+    else:
+        make_date_from_makers = pd.Series(dtype=float, name='make_date_makers')
+
+    # ── Apply imputation row by row (vectorised per maker_id) ─────────────────
+
+    def _fill_city(row):
+        if pd.notna(row['city_maker']) and str(row['city_maker']).strip() not in ('', 'nan'):
+            return row['city_maker']
+        mid = row['maker_id']
+        # 1. sales
+        v = city_from_sales.get(mid)
+        if pd.notna(v) and str(v).strip() not in ('', 'nan'):
+            return v
+        # 2. instruments
+        v = city_from_instruments.get(mid)
+        if pd.notna(v) and str(v).strip() not in ('', 'nan'):
+            return v
+        # 3. makers
+        try:
+            v = city_from_makers.loc[mid]
+            if pd.notna(v) and str(v).strip() not in ('', 'nan'):
+                return v
+        except KeyError:
+            pass
+        return row['city_maker']
+
+    def _fill_make_date(row):
+        if pd.notna(row['make_date']):
+            return row['make_date']
+        mid = row['maker_id']
+        # 1. instruments mean
+        try:
+            v = make_date_from_instruments.loc[mid]
+            if pd.notna(v):
+                return v
+        except KeyError:
+            pass
+        # 2. makers date string
+        try:
+            v = make_date_from_makers.loc[mid]
+            if pd.notna(v):
+                return v
+        except KeyError:
+            pass
+        return row['make_date']
+
+    sales['city_maker'] = sales.apply(_fill_city,     axis=1)
+    sales['make_date']  = sales.apply(_fill_make_date, axis=1)
+                
+    city_map=pd.read_csv('./Data/Geo_Data/city_map.csv',index='city_maker')
+                
+    for col in [
+    "country_iso1",
+            "admin1_name",
+     "admin2_name",
+        ]:
+        sales[col] = sales["city_maker"].map(city_map[col])
+    
+    return sales
+
+sales = pd.read_csv('.Data/tarisio_data/cozio_sales_ALL.csv')
+instruments=pd.read_csv('.Data/tarisio_data/instruments_scraping_complete.csv',index_col='instrument_id')
+makers=pd.read_csv('.Data/tarisio_data/makers.csv',index_col='maker_id')
+
+sales = imputer(sales, makers, instruments)
+###############################
+# 2. Economic Feature Generation
 ###############################
 
 # load data from sales archive and data for currencies conversion (FX data) + inflation adjustment (CPI data)
-sales = pd.read_csv('cozio_sales_ALL.csv')
 CPI_US = pd.read_csv('./Data/Economic_Data/US_CPI_1982=100_noseasadj.csv', index_col='observation_date', parse_dates=True)
 CPI_UK = pd.read_csv('./Data/Economic_Data/UK_CPI_2015=100.csv', index_col='observation_date', parse_dates=True)
 CPI_EU = pd.read_csv('./Data/Economic_Data/EUR_CPI_2015=100.csv', index_col='observation_date', parse_dates=True)
