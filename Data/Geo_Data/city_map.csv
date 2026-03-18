@@ -13,9 +13,9 @@ Absam,AT,Tyrol,Politischer Bezirk Innsbruck Land
 Naples,IT,Campania,Napoli
 Genoa,IT,Liguria,Provincia di Genova
 Brescia,IT,Lombardy,Provincia di Brescia
-Veneto,IT,Veneto,
+Veneto,,,
 Saluzzo,IT,Piedmont,Provincia di Cuneo
-Antwerp,,,
+Antwerp,BE,Flanders,Antwerp
 ,,,
 Vienna,AT,Vienna,Wien Stadt
 Rome,IT,Lazio,Città metropolitana di Roma Capitale
@@ -43,14 +43,14 @@ Rimini,IT,Emilia-Romagna,Provincia di Rimini
 St. Petersburg,US,Florida,Pinellas County
 Padua,IT,Veneto,Provincia di Padova
 San Remo,IT,Liguria,Provincia di Imperia
-Markneukirchen,DE,Saxony,
+Markneukirchen,,,
 Mirecourt,FR,Grand Est,Vosges
 High Wycombe,GB,England,Buckinghamshire
 Bury St. Edmunds,GB,England,Suffolk
 Hawkhurst,GB,England,Kent
 Leeds,GB,England,City and Borough of Leeds
 Glasgow,GB,Scotland,Glasgow City
-Harttenberg,,,
+Harttenberg,DE,Bavaria,Lower Franconia
 Gorleston,GB,England,Norfolk
 Rochdale,GB,England,Borough of Rochdale
 Leicester,GB,England,City of Leicester
@@ -64,34 +64,34 @@ Stockport,GB,England,Borough of Stockport
 Barnstaple,GB,England,Devon
 Dover,GB,England,Kent
 Dublin,IE,Leinster,Dublin City
-Dresden,DE,Saxony,
+Dresden,,,
 Copenhagen,DK,Capital Region,København
 Amsterdam,NL,North Holland,Gemeente Amsterdam
-Budapest,HU,Budapest,
+Budapest,,,
 Gomersal,AU,South Australia,Light
-Leipzig,DE,Saxony,
-Kreuznach,DE,Rheinland-Pfalz,
+Leipzig,,,
+Kreuznach,,,
 Stuttgart,DE,Baden-Wurttemberg,Regierungsbezirk Stuttgart
 Edinburgh,GB,Scotland,City of Edinburgh
 Nürnberg,DE,Bavaria,Regierungsbezirk Mittelfranken
 Ivrea,IT,Piedmont,Torino
-Klingenthal,DE,Saxony,
-Berlin,DE,State of Berlin,
+Klingenthal,,,
+Berlin,,,
 Innsbruck,AT,Tyrol,Innsbruck Stadt
 Brussels,BE,Brussels Capital,Bruxelles-Capitale
 Derby,GB,England,Derby
 Handsworth,CA,British Columbia,Metro Vancouver Regional District
 Bicester,GB,England,Oxfordshire
 Reims,FR,Grand Est,Marne
-Prague,CZ,Prague,
+Prague,,,
 Brighton,GB,England,Brighton and Hove
 Liège,BE,Wallonia,Province de Liège
 Versailles,FR,Île-de-France,Yvelines
 Liverpool,GB,England,Liverpool
-Jicine,,,
-Cheapside,BB,Saint Michael,
+Jicine,CZ,Hradec Králové Region,Okres Jičín
+Cheapside,,,
 Barcelona,ES,Catalonia,Província de Barcelona
-Dillingen,DE,Saarland,
+Dillingen,,,
 Ancona,IT,The Marches,Provincia di Ancona
 Wildstein,DE,Bavaria,Upper Palatinate
 Espinho,PT,Aveiro,Espinho
@@ -115,12 +115,12 @@ Berne,CH,Bern,Bern-Mittelland District
 Windermere,GB,England,Cumbria
 Birmingham,GB,England,City and Borough of Birmingham
 Dalkeith,GB,Scotland,Midlothian
-Crespano,,,
+Crespano,IT,Veneto,Provincia di Treviso
 Neufchateau,FR,Grand Est,Vosges
 Greenford,GB,England,Greater London
 Horsell,GB,England,Surrey
-Bad Brambach,DE,Saxony,
-Alexandria,EG,Alexandria,
+Bad Brambach,,,
+Alexandria,,,
 Dorset,GB,England,Dorset
 Ottawa,CA,Ontario,Ottawa
 Alassio,IT,Liguria,Provincia di Savona
@@ -128,13 +128,13 @@ Kilkenny,IE,Leinster,Kilkenny
 Reggio Emilia,IT,Emilia-Romagna,Provincia di Reggio Emilia
 Füssen,DE,Bavaria,Swabia
 Gateshead,GB,England,Gateshead
-Hohendorf,DE,Mecklenburg-Vorpommern,
+Hohendorf,,,
 Düsseldorf,DE,North Rhine-Westphalia,Düsseldorf District
-Erlbach,DE,Saxony,
+Erlbach,,,
 Bedford,GB,England,Bedford
 Nancy,FR,Grand Est,Meurthe et Moselle
 "Kingston, NY",US,New York,Ulster County
-Schönbach,DE,Saxony,
+Schönbach,,,
 Carlisle,GB,England,Cumbria
 Erlangen,DE,Bavaria,Regierungsbezirk Mittelfranken
 Berwick-upon-Tweed,GB,England,Northumberland
@@ -148,11 +148,11 @@ Deganwy,GB,Wales,Conwy
 Hartford,US,Connecticut,Capitol Planning Region
 Regensburg,DE,Bavaria,Upper Palatinate
 Leith,GB,Scotland,City of Edinburgh
-Breitenfeld,DE,Saxony,
+Breitenfeld,,,
 Plymouth,GB,England,Plymouth
 Munich,DE,Bavaria,Upper Bavaria
 Falkirk,GB,Scotland,Falkirk
-Broomhill,CA,Manitoba,
+Broomhill,,,
 Huddersfield,GB,England,Kirklees
 Strasbourg,FR,Grand Est,Bas-Rhin
 Llandudno,GB,Wales,Conwy
@@ -160,7 +160,7 @@ Bridlington,GB,England,East Riding of Yorkshire
 Metz,FR,Grand Est,Moselle
 Catania,IT,Sicily,Catania
 Bathgate,GB,Scotland,West Lothian
-Pesth,HU,Budapest,
+Pesth,,,
 Stockholm,SE,Stockholm,Stockholms Kommun
 Dijon,FR,Bourgogne,Cote d'Or
 Adderbury,GB,England,Oxfordshire
@@ -168,8 +168,8 @@ Siena,IT,Tuscany,Provincia di Siena
 Brno,CZ,South Moravian,Město Brno
 Bristol,GB,England,City of Bristol
 Verona,IT,Veneto,Provincia di Verona
-Wernitzgrün,DE,Saxony,
-Quittenbach,,,
+Wernitzgrün,,,
+Quittenbach,DE,Bavaria,Upper Franconia
 Vils,AT,Tyrol,Politischer Bezirk Reutte
 Halifax,CA,Nova Scotia,Halifax Regional Municipality
 Marseille,FR,Provence-Alpes-Côte d'Azur,Bouches-du-Rhône
@@ -179,13 +179,13 @@ Weston,US,Florida,Broward County
 Failsworth,GB,England,Borough of Oldham
 Chelmsford,GB,England,Essex
 "Abington, MA",US,Massachusetts,Plymouth County
-Crewe Cheshire,,,
+Crewe Cheshire,GB,England,Cheshire East
 Hawick,GB,Scotland,The Scottish Borders
 Blackburn,GB,England,Blackburn with Darwen
 Lincolnshire,GB,England,Lincolnshire
 Eastbourne,GB,England,East Sussex
-Hamburg,DE,Hamburg,
-Charlottenburg,DE,State of Berlin,
+Hamburg,,,
+Charlottenburg,,,
 Zurich,CH,Zurich,Bezirk Zürich
 Krakow,PL,Lesser Poland,Kraków
 Mattaincourt,FR,Grand Est,Vosges
@@ -193,15 +193,15 @@ Mid Calder,GB,Scotland,West Lothian
 Avallon,FR,Bourgogne,Yonne
 Passau,DE,Bavaria,Lower Bavaria
 Redruth,GB,England,Cornwall
-Brixham S. Devon,,,
+Brixham S. Devon,GB,England,Devon
 Surrey,GB,England,Surrey
 Stockton-on-Tees,GB,England,Stockton-on-Tees
-Hull,,,
+Hull,GB,England,East Riding of Yorkshire
 Coventry,GB,England,Coventry
 Spilamberto,IT,Emilia-Romagna,Provincia di Modena
-Koblenz,DE,Rheinland-Pfalz,
+Koblenz,,,
 Aachen,DE,North Rhine-Westphalia,Regierungsbezirk Köln
-Lentigione,,,
+Lentigione,IT,Emilia-Romagna,Provincia di Reggio Emilia
 Bordeaux,FR,Nouvelle-Aquitaine,Gironde
 Madrid,ES,Madrid,Provincia de Madrid
 Beaconsfield,GB,England,Buckinghamshire
@@ -218,7 +218,7 @@ Falmouth,GB,England,Cornwall
 Bad Homburg,DE,Hesse,Regierungsbezirk Darmstadt
 Rotterdam,NL,South Holland,Rotterdam
 Ascoli Piceno,IT,The Marches,Provincia di Ascoli Piceno
-Bremen,DE,City state Bremen,
+Bremen,,,
 Château-Thierry,FR,Hauts-de-France,Aisne
 Douglas,IE,Munster,County Cork
 Lewisham,GB,England,Greater London
@@ -226,7 +226,7 @@ Oxford,GB,England,Oxfordshire
 Cortenova,IT,Lombardy,Provincia di Lecco
 Cento,IT,Emilia-Romagna,Provincia di Ferrara
 Seveso,IT,Lombardy,Provincia di Monza e della Brianza
-"New York, NY",US,New York,
+"New York, NY",,,
 Treviso,IT,Veneto,Provincia di Treviso
 Perugia,IT,Umbria,Provincia di Perugia
 Cesena,IT,Emilia-Romagna,Provincia di Forlì-Cesena
@@ -242,7 +242,7 @@ Devonport,GB,England,Plymouth
 Luzern,CH,Lucerne,Lucerne-Stadt District
 Gloucester,CA,Ontario,Ottawa
 Odense,DK,South Denmark,Odense Kommune
-Jena,DE,Thuringia,
+Jena,,,
 Lugo,IT,Emilia-Romagna,Provincia di Ravenna
 Carrara,IT,Tuscany,Provincia di Massa-Carrara
 Toulouse,FR,Occitanie,Upper Garonne
@@ -256,7 +256,7 @@ Boscombe,GB,England,Wiltshire
 Dorking,GB,England,Surrey
 Kent,GB,England,Kent
 Hounslow,GB,England,Greater London
-Lübeck,DE,Schleswig-Holstein,
+Lübeck,,,
 Wimborne,CA,Alberta,Kneehill County
 Frankfurt,DE,Bavaria,Regierungsbezirk Mittelfranken
 Haarlem,NL,North Holland,Gemeente Haarlem
@@ -264,8 +264,8 @@ Kew,GB,England,Greater London
 Cologne,IT,Lombardy,Provincia di Brescia
 Fauldhouse,GB,Scotland,West Lothian
 Cumberland,GB,England,Cumbria
-Moravia,,,
-Mainz,DE,Rheinland-Pfalz,
+Moravia,CZ,Moravia,
+Mainz,,,
 Bern,CH,Bern,Bern-Mittelland District
 Shrewsbury,GB,England,Shropshire
 Grenoble,FR,Rhône-Alpes,Isère
@@ -275,12 +275,12 @@ Colchester,GB,England,Essex
 Beuel,DE,North Rhine-Westphalia,Regierungsbezirk Köln
 Pistoia,IT,Tuscany,Provincia di Pistoia
 Pisa,IT,Tuscany,Province of Pisa
-Pressburg,SK,Bratislava Region,
+Pressburg,,,
 Hanwell,GB,England,Oxfordshire
 Warsaw,PL,Mazovia,Warszawa
-Haltcliff,,,
+Haltcliff,GB,England,West Yorkshire
 Cardiff,GB,Wales,Cardiff
-Toronto,CA,Ontario,
+Toronto,,,
 Easthampton,US,Massachusetts,Hampshire County
 Angers,FR,Pays de la Loire,Maine-et-Loire
 Tours,FR,Centre-Val de Loire,Indre-et-Loire
@@ -296,16 +296,16 @@ Bagnacavallo,IT,Emilia-Romagna,Provincia di Ravenna
 Alva,GB,Scotland,Clackmannanshire
 Palermo,IT,Sicily,Palermo
 Cambridge,GB,England,Cambridgeshire
-Saxony,DE,Saxony,
+Saxony,,,
 Leiden,NL,South Holland,Gemeente Leiden
 Biggar,GB,Scotland,South Lanarkshire
-Castelbolognese,,,
+Castelbolognese,IT,Emilia-Romagna,Provincia di Ravenna
 Great Missenden,GB,England,Buckinghamshire
 Korneuburg,AT,Lower Austria,Politischer Bezirk Korneuburg
 Ben-Rhydding,GB,England,Bradford
 Trapani,IT,Sicily,Trapani
 "Charlotte, NC",US,North Carolina,Mecklenburg County
-Buenos Aires,AR,Buenos Aires F.D.,
+Buenos Aires,,,
 Gorebridge,GB,Scotland,Midlothian
 Bovisio,IT,Lombardy,Provincia di Monza e della Brianza
 Abingdon,GB,England,Oxfordshire
@@ -323,34 +323,34 @@ Melbourne,AU,Victoria,Melbourne
 Exmouth,GB,England,Devon
 Augsburg,DE,Bavaria,Swabia
 Tooting,GB,England,Greater London
-Anta-Espinho,,,
+Anta-Espinho,PT,Aveiro District,Espinho
 Apeldoorn,NL,Gelderland,Gemeente Apeldoorn
 Bath,GB,England,Bath and North East Somerset
 Ashford,GB,England,Kent
 Vendome,FR,Centre-Val de Loire,Loire-et-Cher
 Les Bayards,CH,Neuchâtel,Val-de-Travers District
-Ceseno Moderna,,,
+Ceseno Moderna,IT,Emilia-Romagna,Provincia di Modena
 Chalon-sur-Saone,FR,Bourgogne,Saône-et-Loire
 Rennes,FR,Brittany,Ille-et-Vilaine
 "Philadelphia, PA",US,Pennsylvania,Philadelphia County
 Barrow-in-Furness,GB,England,Cumbria
 Dinkelsbühl,DE,Bavaria,Regierungsbezirk Mittelfranken
 Geneva,CH,Geneva,Geneva
-Homburg,DE,Saarland,
+Homburg,,,
 Louth,IE,Leinster,Louth
 Camerton,GB,England,Cumbria
 Amberg,DE,Bavaria,Upper Palatinate
 "Inglewood, CA",US,California,Los Angeles County
-Hannover,DE,Lower Saxony,
+Hannover,,,
 Exeter,GB,England,Devon
 Faenza,IT,Emilia-Romagna,Provincia di Ravenna
-Chemnitz,DE,Saxony,
+Chemnitz,,,
 Crosshill,GB,Scotland,South Ayrshire
 Bergen,NO,Vestland,Bergen
 Essex,GB,England,Essex
 Landshut,DE,Bavaria,Lower Bavaria
 Cascina,IT,Tuscany,Province of Pisa
-Sydney,AU,New South Wales,
+Sydney,,,
 "Haddonfield, NJ",US,New Jersey,Camden County
 Nonantola,IT,Emilia-Romagna,Provincia di Modena
 Castelfranco,IT,Lombardy,Provincia di Bergamo
@@ -360,15 +360,15 @@ Hradec Králové,CZ,Královéhradecký kraj,Okres Hradec Králové
 Bournemouth,GB,England,"Bournemouth, Christchurch and Poole Council"
 Vescovato,IT,Lombardy,Provincia di Cremona
 Tyrol,US,Nevada,Elko County
-Cortenova Valsassina,,,
-Eltersdorf,DE,Schleswig-Holstein,
+Cortenova Valsassina,IT,Lombardy,Provincia di Lecco
+Eltersdorf,,,
 Imola,IT,Emilia-Romagna,Bologna
 "Cambridge, MA",US,Massachusetts,Middlesex County
 Johannesburg,ZA,Gauteng,City of Johannesburg Metropolitan Municipality
 Gothenburg,US,Nebraska,Dawson County
 San Polo d'Enza,IT,Emilia-Romagna,Provincia di Reggio Emilia
 Valencia,ES,Valencia,Província de València
-Rostock,DE,Mecklenburg-Vorpommern,
+Rostock,,,
 Tottenham,GB,England,Greater London
 Ansbach,DE,Bavaria,Regierungsbezirk Mittelfranken
 Benevento,IT,Campania,Provincia di Benevento
@@ -378,7 +378,7 @@ Solero,IT,Piedmont,Provincia di Alessandria
 Bienne,AT,Vienna,Wien Stadt
 Ash Priors,GB,England,Somerset
 Ripatransone,IT,The Marches,Provincia di Ascoli Piceno
-Kralove,,,
+Kralove,CZ,Hradec Králové Region,
 Saronno,IT,Lombardy,Provincia di Varese
 Magliano,IT,Apulia,Provincia di Lecce
 "New Boston, NH",US,New Hampshire,Hillsborough County
@@ -389,9 +389,9 @@ Baiersdorf,DE,Bavaria,Regierungsbezirk Mittelfranken
 "Chicago, IL",US,Illinois,Cook County
 Montagnana,IT,Veneto,Provincia di Padova
 Rouen,FR,Normandy,Seine-Maritime
-Massachusetts,US,Massachusetts,
+Massachusetts,,,
 Rio de Janeiro,BR,Rio de Janeiro,Rio de Janeiro
-Cairo,EG,Cairo,
+Cairo,,,
 Reichenberg,CZ,Liberec Region,Liberec District
 Forli,IT,Emilia-Romagna,Provincia di Forlì-Cesena
 Stadtamhof,DE,Bavaria,Upper Palatinate
@@ -403,7 +403,7 @@ Gorizia,IT,Friuli Venezia Giulia,Gorizia
 "Point Loma, CA",US,Texas,San Patricio County
 Lambeth,GB,England,Greater London
 "Chester, NH",US,New Hampshire,Rockingham County
-Weimar,DE,Thuringia,
+Weimar,,,
 "Ithaca, NY",US,New York,Tompkins County
 "Minneapolis, MN",US,Minnesota,Hennepin County
 Wilmslow,GB,England,Cheshire East
@@ -425,35 +425,35 @@ Grafenhausen,DE,Hesse,Regierungsbezirk Darmstadt
 Le Havre,FR,Normandy,Seine-Maritime
 Stradella,IT,Lombardy,Provincia di Pavia
 Ellwangen,DE,Baden-Wurttemberg,Regierungsbezirk Stuttgart
-Gabicce,,,
+Gabicce,IT,Marche,Provincia di Pesaro e Urbino
 Kolin,CZ,Central Bohemia,Okres Kolín
 "San Jose, CA",US,California,Santa Clara County
 San Benedetto del Tronto,IT,The Marches,Provincia di Ascoli Piceno
 Calco,IT,Lombardy,Provincia di Lecco
-Champenois,,,
+Champenois,FR,Grand Est,Marne
 Rosario,AR,Santa Fe,Rosario Department
 "Baltimore, MD",US,Maryland,City of Baltimore
 Ronchi dei Legionari,IT,Friuli Venezia Giulia,Gorizia
-Mayence,DE,Rheinland-Pfalz,
+Mayence,,,
 "Oakland, CA",US,California,Alameda County
 "Los Angeles, CA",US,California,Los Angeles County
-Maine,US,Maine,
+Maine,,,
 Aberdeenshire,GB,Scotland,Aberdeenshire
 Bury,GB,England,Borough of Bury
 "Orlando, FL",US,Florida,Orange County
 "Allenton, RI",US,Rhode Island,Washington County
 "Hartford, CT",US,Connecticut,Capitol Planning Region
-"Washington, DC",US,District of Columbia,
-Szolnok,HU,Jász-Nagykun-Szolnok,
+"Washington, DC",,,
+Szolnok,,,
 Arad,RO,Arad County,Municipiul Arad
 "Penn Yan, NY",US,New York,Yates County
 "Madrid, IA",US,Iowa,Boone County
-Meyenburg,DE,Brandenburg,
+Meyenburg,,,
 Gand,BE,Flanders,Provincie Oost-Vlaanderen
-Gyor,HU,Győr-Moson-Sopron,
+Gyor,,,
 "Milwaukee, WI",US,Wisconsin,Milwaukee County
 Ariccia,IT,Lazio,Città metropolitana di Roma Capitale
-Sumeg,HU,Veszprém,
+Sumeg,,,
 Cape Town,ZA,Western Cape,City of Cape Town
 "Athens, OH",US,Ohio,Athens County
 Salerno,IT,Campania,Provincia di Salerno
@@ -462,15 +462,15 @@ Kensington,GB,England,Liverpool
 "Rochester, NY",US,New York,Monroe County
 "St. Ignatius, MT",US,Montana,Lake County
 Olgiate Calco,IT,Lombardy,Provincia di Lecco
-Kormend,HU,Vas County,
-Miskolc,HU,Borsod-Abaúj-Zemplén,
-Szekesfehervar,HU,Fejér,
+Kormend,,,
+Miskolc,,,
+Szekesfehervar,,,
 Lago Scuro,IT,Liguria,Provincia di La Spezia
 "Detroit, MI",US,Michigan,Wayne County
 Hilton Beach,CA,Ontario,Algoma
 "San Diego, CA",US,California,San Diego County
 Aix-la-Chapelle,DE,North Rhine-Westphalia,Regierungsbezirk Köln
-Lambeth & Kew,,,
+Lambeth & Kew,GB,England,Greater London
 "Lowell, MA",US,Massachusetts,Middlesex County
 "McLean, VA",US,Virginia,Fairfax County
 "Pittsburgh, PA",US,Pennsylvania,Allegheny County
@@ -487,9 +487,9 @@ Castions di Strada,IT,Friuli Venezia Giulia,Udine
 Boleslav,CZ,Liberecký kraj,Okres Liberec
 "Springfield, MA",US,Massachusetts,Hampden County
 Saaz,AT,Styria,Politischer Bezirk Südoststeiermark
-Vrsocice,,,
+Vrsocice,CZ,Prague,Prague
 "Portland, OR",US,Oregon,Multnomah County
-Göttingen,DE,Lower Saxony,
+Göttingen,,,
 "Brunswick, IN",US,Indiana,Clay County
 "Ottumwa, IA",US,Iowa,Wapello County
 Mercato Cilento,IT,Campania,Provincia di Salerno
@@ -502,12 +502,12 @@ Withington,GB,England,Shropshire
 "Dallas, TX",US,Texas,Dallas County
 "Seattle, WA",US,Washington,King County
 "Columbus, OH",US,Ohio,Franklin County
-Misolka,,,
+Misolka,CZ,Plzeň Region,
 "Madison, WI",US,Wisconsin,Dane County
 Frenstat,US,Texas,Burleson County
 Turnov,CZ,Liberecký kraj,Okres Semily
 "North Weare, NH",US,New Hampshire,Hillsborough County
-Krkonosi,,,
+Krkonosi,CZ,Liberec Region,Semily
 "Hoboken, NJ",US,New Jersey,Hudson County
 "Spokane, WA",US,Washington,Spokane County
 Røyse,NO,Buskerud,Hole
@@ -516,12 +516,12 @@ Niles,US,Illinois,Cook County
 Cusano Milanino,IT,Lombardy,Città metropolitana di Milano
 "Buffalo, NY",US,New York,Erie County
 "Port Townsend,WA",US,Washington,Jefferson County
-Agram-Zagreb,,,
+Agram-Zagreb,HR,City of Zagreb,Zagreb
 Monza,IT,Lombardy,Provincia di Monza e della Brianza
 Abano Terme,IT,Veneto,Provincia di Padova
 Montevideo,UY,Montevideo Department,Municipio B
 Casorate Sempione,IT,Lombardy,Provincia di Varese
-Debreczen,HU,Hajdú-Bihar,
+Debreczen,,,
 "Atlanta, GA",US,Georgia,Fulton County
 "Mount Gilead, OH",US,Ohio,Morrow County
 Campomorone,IT,Liguria,Provincia di Genova
@@ -531,41 +531,41 @@ Junction City,US,Kansas,Geary County
 Kassel,DE,Hesse,Regierungsbezirk Kassel
 "San Francisco, CA",US,California,City and County of San Francisco
 Lugano,CH,Ticino,Lugano District
-Chrudimi,,,
-Moscow,RU,Moscow,
+Chrudimi,CZ,Pardubice Region,Okres Chrudim
+Moscow,,,
 Arqua Polesine,IT,Veneto,Provincia di Rovigo
 "Wilmington, OH",US,Ohio,Clinton County
 Capri,IT,Campania,Napoli
 Dornbirn,AT,Vorarlberg,Politischer Bezirk Dornbirn
 "Battle Creek, MI",US,Michigan,Calhoun County
-Brambach,DE,Saxony-Anhalt,
+Brambach,,,
 "Poland, ME",US,Maine,Androscoggin County
 "Point Lookout, NY",US,New York,Nassau County
-Roku,PG,Central Province,
+Roku,,,
 "Norwich, NY",US,New York,Chenango County
 "Swarthmore, PA",US,Pennsylvania,Delaware County
 Shellbrook,CA,Saskatchewan,Shellbrook
 Lavagna,IT,Liguria,Provincia di Genova
 "Providence, RI",US,Rhode Island,Providence County
 Staranzano,IT,Friuli Venezia Giulia,Gorizia
-Gateside Fife,,,
+Gateside Fife,GB,Scotland,Fife
 Sofia,BG,Sofia-Capital,Stolichna Obshtina
-Franklin,,,
+Franklin,US,Massachusetts,Norfolk County
 "West Roxbury, MA",US,Massachusetts,Suffolk County
 "Mapleshade, NJ",US,Ohio,Gallia County
 Formigine,IT,Emilia-Romagna,Provincia di Modena
 Crema,IT,Lombardy,Provincia di Cremona
-Treponti Teolo,,,
+Treponti Teolo,IT,Veneto,Provincia di Padova
 "Evansville, IL",US,Illinois,Randolph County
 "Berkley, MI",US,Michigan,Oakland County
 "Williamsburg, IA",US,Iowa,Iowa County
-Kleine Scheideg,,,
+Kleine Scheideg,CH,Bern,Bernese Oberland
 Enkoping,SE,Uppsala,Enköpings Kommun
 "Lewiston, ME",US,Maine,Androscoggin County
 "Las Vegas, NV",US,Nevada,Clark County
 Xalapa,MX,Veracruz,Xalapa
 "San Antonio, TX",US,Texas,Bexar County
-Potsdam,DE,Brandenburg,
+Potsdam,,,
 "Lexington, KY",US,Kentucky,Fayette County
 Oberschweinbach,DE,Bavaria,Upper Bavaria
 Chur,CH,Grisons,Region Plessur
@@ -573,15 +573,15 @@ Broxburn,GB,Scotland,West Lothian
 "St. Paul, MN",US,Alaska,Aleutians West Census Area
 Denham,GB,England,Buckinghamshire
 Cairo Montenotte,IT,Liguria,Provincia di Savona
-Gerona,,,
+Gerona,ES,Catalonia,Provincia de Girona
 Ingolstadt,DE,Bavaria,Upper Bavaria
-Tata,HU,Komárom-Esztergom,
+Tata,,,
 Tabor,CZ,Jihočeský kraj,Okres Tábor
 Leonardo,IT,Emilia-Romagna,Provincia di Parma
 "Ashland, OH",US,Ohio,Ashland County
 "Miami, FL",US,Florida,Miami-Dade County
 Calgary,CA,Alberta,Calgary
-Tel Aviv,IL,Tel Aviv,
+Tel Aviv,,,
 "Salt Lake City, UT",US,Utah,Salt Lake County
 "Lakewood, OH",US,Ohio,Cuyahoga County
 "Houston, TX",US,Texas,Harris County
@@ -589,15 +589,15 @@ Tel Aviv,IL,Tel Aviv,
 Wallgau,DE,Bavaria,Upper Bavaria
 "Bloomington, IL",US,Illinois,McLean County
 "Scranton, PA",US,Pennsylvania,Lackawanna County
-Ewnie,,,
-Lubben-Steinkirchen,,,
+Ewnie,GB,Scotland,Angus
+Lubben-Steinkirchen,DE,Brandenburg,Dahme-Spreewald
 "Paterson, NJ",US,New Jersey,Passaic County
 Salo,IT,Lombardy,Provincia di Brescia
 "Woodmere, NY",US,New York,Nassau County
 Montreal,CA,Quebec,Montréal
 "Grand Rapids, MI",US,Michigan,Kent County
 Nowy Targ,PL,Lesser Poland,Powiat nowotarski
-Ixelles-Brussels,,,
+Ixelles-Brussels,BE,Brussels-Capital Region,Brussels
 "Ann Arbor, MI",US,Michigan,Washtenaw County
 Prerov,CZ,Olomoucký,Okres Přerov
 Bernal,AR,Buenos Aires,Partido de Quilmes
@@ -634,9 +634,9 @@ Bonn,DE,North Rhine-Westphalia,Regierungsbezirk Köln
 Casigliano,IT,Umbria,Provincia di Terni
 Pieve Ligure,IT,Liguria,Provincia di Genova
 "Middlebury, CT",US,Connecticut,Naugatuck Valley Planning Region
-"Fiddle Mountain, CT",,,
+"Fiddle Mountain, CT",US,Connecticut,
 "Cape Cod, MA",US,Massachusetts,Barnstable County
-San Giovanni in Perciseto,,,
+San Giovanni in Perciseto,IT,Emilia-Romagna,Provincia di Bologna
 "Reading, PA",US,Pennsylvania,Berks County
 Faulenbach,DE,Bavaria,Swabia
 Leitmeritz,CZ,Ústecký kraj,Okres Litoměřice
@@ -645,14 +645,14 @@ Troyes,FR,Grand Est,Aube
 Wiesbaden,DE,Hesse,Regierungsbezirk Darmstadt
 Igny,FR,Île-de-France,Essonne
 Barga,IT,Tuscany,Provincia di Lucca
-Winnipeg,CA,Manitoba,
-Emilia-Romagna,IT,Emilia-Romagna,
-Monte Carlo,MC,Municipality of Monaco,
+Winnipeg,,,
+Emilia-Romagna,,,
+Monte Carlo,,,
 Morecambe,GB,England,Lancashire
 Ghent,US,New York,Columbia County
 Macerata,IT,The Marches,Provincia di Macerata
 "Merriam, KS",US,Kansas,Johnson County
-Mexico City,MX,Mexico City,
+Mexico City,,,
 "Worthing, Sussex",GB,England,West Sussex
 Toulon,FR,Provence-Alpes-Côte d'Azur,Var
 Breitenbach,CH,Solothurn,Bezirk Thierstein
@@ -662,7 +662,7 @@ Spoleto,IT,Umbria,Provincia di Perugia
 "Bolton, MA",US,Massachusetts,Worcester County
 "Denver, CO",US,Colorado,Denver County
 Znojmo,CZ,South Moravian,Okres Znojmo
-Pieve Modolena,,,
+Pieve Modolena,IT,Emilia-Romagna,Provincia di Reggio Emilia
 Ancenis,FR,Pays de la Loire,Loire-Atlantique
 Idaho Springs,US,Colorado,Clear Creek County
 "Owatonna, MN",US,Minnesota,Steele County
@@ -670,7 +670,7 @@ West Bridgford,GB,England,Nottinghamshire
 Nottingham,GB,England,Nottingham
 Viterbo,IT,Lazio,Provincia di Viterbo
 Southampton,GB,England,Southampton
-Dessau,DE,Saxony-Anhalt,
+Dessau,,,
 Bordighera,IT,Liguria,Provincia di Imperia
 Varese,IT,Lombardy,Provincia di Varese
 Mathi,IT,Piedmont,Torino
@@ -680,7 +680,7 @@ Cannes,FR,Provence-Alpes-Côte d'Azur,Alpes-Maritimes
 Bucks,US,Alabama,Mobile County
 Guildford,GB,England,Surrey
 Bielefeld,DE,North Rhine-Westphalia,Regierungsbezirk Detmold
-San Marino,SM,San Marino,
+San Marino,,,
 "Sacramento, CA",US,California,Sacramento County
 Mlada Boleslav,CZ,Central Bohemia,Okres Mladá Boleslav
 Vidigulfo,IT,Lombardy,Provincia di Pavia
@@ -690,8 +690,8 @@ Bad Saulgau,DE,Baden-Wurttemberg,Tübingen Region
 "Santa Rosa, CA",US,California,Sonoma County
 Saubrigues,FR,Nouvelle-Aquitaine,Landes
 Todi,IT,Umbria,Provincia di Perugia
-Spreewald,,,
-Erfurt,DE,Thuringia,
+Spreewald,DE,Brandenburg,
+Erfurt,,,
 Castelfidardo,IT,The Marches,Provincia di Ancona
 Romont,CH,Fribourg,Glâne District
 Marmande,FR,Nouvelle-Aquitaine,Lot-et-Garonne
@@ -712,7 +712,7 @@ Rouvres la Chétive,FR,Grand Est,Vosges
 Saint-Quentin,FR,Hauts-de-France,Aisne
 "Newark, NJ",US,New Jersey,Essex County
 Ortona,IT,Abruzzo,Provincia di Chieti
-Tokyo,JP,Tokyo,
+Tokyo,,,
 Foggia,IT,Apulia,Provincia di Foggia
 La Chaux-de-Fonds,CH,Neuchâtel,La Chaux-de-Fonds District
 Massy,FR,Île-de-France,Essonne
@@ -726,3 +726,12 @@ Colle,IT,Tuscany,Provincia di Siena
 Granada,ES,Andalucia,Provincia de Granada
 Hochfürstl,DE,Bavaria,Regierungsbezirk Mittelfranken
 Wetherby,GB,England,East Riding of Yorkshire
+Abbey Wood,GB,England,Greater London
+Amiens,FR,Hauts-de-France,Somme
+Cheshire,GB,England,Cheshire
+Galston,GB,Scotland,East Ayrshire
+Gotha,DE,Thuringia,Landkreis Gotha
+Halle,DE,Saxony-Anhalt,Landkreis Halle (Saale)
+Kaaden,CZ,Ústí nad Labem Region,Okres Chomutov
+Lichfield,GB,England,Staffordshire
+Tarvisio,IT,Friuli-Venezia Giulia,Provincia di Udine
